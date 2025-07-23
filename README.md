@@ -1,42 +1,43 @@
-🎬 VidsnapAI – AI-Powered Reel Generator
+## 🎬 VidsnapAI – AI-Powered Reel Generator
+
 VidsnapAI is a simple yet powerful web application built using Python and Flask. It allows users to upload images and provide a short description, which is then converted into a voiceover using text-to-speech. The application automatically combines the images and voice to generate a vertical video reel in .mp4 format.
 
-🚀 Features
+## 🚀 Features
 📤 Upload multiple images in the correct order
-
 📝 Add a short description (used as voiceover)
-
 🗣️ Converts text to speech using Google TTS (gTTS)
-
 🎥 Automatically creates vertical 1080x1920 reels using FFmpeg
-
 🖼️ View and play your generated reels in a gallery
-
 🔄 Periodically checks and processes new uploads
 
-🛠️ Technologies Used
-Tool/Library	Purpose
-Python	Main programming language
-Flask	Web framework for backend
-HTML, CSS, Jinja2	Frontend and template rendering
-gTTS	Google Text-to-Speech (converts text to audio)
-ffmpeg	Combines images and audio into .mp4 video
-os, subprocess, uuid	Folder creation, video processing, unique naming
+## 🛠️ Technologies Used
+| Tool/Library         | Purpose                                          |
+| -------------------- | ------------------------------------------------ |
+| Python               | Main programming language                        |
+| Flask                | Web framework for backend                        |
+| HTML, CSS, Jinja2    | Frontend and template rendering                  |
+| gTTS                 | Google Text-to-Speech (converts text to audio)   |
+| ffmpeg               | Combines images and audio into `.mp4` video      |
+| os, subprocess, uuid | Folder creation, video processing, unique naming |
 
-🧱 Project Structure
+
+## 🧱 Project Structure
 ```
 8_vidsnapAI_project/
 │
-├── main.py               # Main Flask app (handles routes and logic)
+├── main.py           # Main Flask app (handles routes and logic)
+├── config.py
+├── ffmpeg_command.txt
+├── requirements.txt
 ├── generate_process.py   # Combines images + audio into video using ffmpeg
 ├── text_to_audio.py      # Converts text to speech using gTTS
 ├── done.txt              # Tracks already processed folders
-├── input.txt             # Used by ffmpeg for video concatenation
 │
 ├── user_uploads/         # Contains user-submitted folders (images + text)
 │   └── <unique_folder_id>/
 │       ├── image1.jpg, image2.jpg, ...
-│       ├── description.txt
+│       ├── desc.txt
+|       ├── input.txt
 │       └── audio.mp3
 │
 ├── static/
@@ -56,7 +57,7 @@ os, subprocess, uuid	Folder creation, video processing, unique naming
 └── README.md             # This documentation
 ```
 
-🧪 How It Works
+## 🧪 How It Works
 1)Run the application:
     python app.py
 
@@ -67,3 +68,6 @@ os, subprocess, uuid	Folder creation, video processing, unique naming
     Upload images and a short description
     View all generated video reels in the gallery
 
+## 📦 Install Dependencies
+Use the provided requirements.txt to install all necessary Python libraries:
+    pip install -r requirements.txt
