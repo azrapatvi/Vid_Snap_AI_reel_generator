@@ -92,4 +92,4 @@ def background_worker():
 # 🚀 Launch both Flask and background thread
 if __name__ == "__main__":
     threading.Thread(target=background_worker, daemon=True).start()
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=10000)
