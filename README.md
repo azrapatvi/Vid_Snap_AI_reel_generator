@@ -1,57 +1,69 @@
 🎬 VidsnapAI – AI-Powered Reel Generator
-VidsnapAI is a simple and smart web application built using Python and Flask. It allows users to upload images and a short description. Then it automatically creates a video reel (.mp4) by converting the description into voice (using text-to-speech) and combining it with the uploaded images.
+VidsnapAI is a simple yet powerful web application built using Python and Flask. It allows users to upload images and provide a short description, which is then converted into a voiceover using text-to-speech. The application automatically combines the images and voice to generate a vertical video reel in .mp4 format.
 
 🚀 Features
-📤 Upload multiple images (in correct order)
-📝 Enter a short description (used as voiceover)
+📤 Upload multiple images in the correct order
+
+📝 Add a short description (used as voiceover)
+
 🗣️ Converts text to speech using Google TTS (gTTS)
-🎥 Automatically creates a vertical 1080x1920 reel using ffmpeg
-🖼️ View and play your generated reel in a gallery
+
+🎥 Automatically creates vertical 1080x1920 reels using FFmpeg
+
+🖼️ View and play your generated reels in a gallery
+
 🔄 Periodically checks and processes new uploads
+
 🛠️ Technologies Used
 Tool/Library	Purpose
 Python	Main programming language
 Flask	Web framework for backend
-HTML, CSS (Jinja2)	Frontend and template rendering
-gTTS	Converts text to speech (Google Text-to-Speech)
-ffmpeg	Combines audio and images to create .mp4 video
-os, subprocess, uuid	For folder creation, video processing, and unique names
+HTML, CSS, Jinja2	Frontend and template rendering
+gTTS	Google Text-to-Speech (converts text to audio)
+ffmpeg	Combines images and audio into .mp4 video
+os, subprocess, uuid	Folder creation, video processing, unique naming
+
 🧱 Project Structure
+```
 8_vidsnapAI_project/
 │
-├── main.py                 # Main Flask application (handles routes and logic)
-├── generate_process.py     # Combines images + audio into video using ffmpeg
-├── text_to_audio.py        # Converts text to speech using gTTS and saves as audio.mp3
-├── done.txt                # Keeps track of already processed folders
-├── input.txt               # Used by ffmpeg for concatenation
+├── main.py               # Main Flask app (handles routes and logic)
+├── generate_process.py   # Combines images + audio into video using ffmpeg
+├── text_to_audio.py      # Converts text to speech using gTTS
+├── done.txt              # Tracks already processed folders
+├── input.txt             # Used by ffmpeg for video concatenation
 │
-├── user_uploads/           # Contains user-submitted folders with images + description
-│   └── <unique_folder_id>/ # Each upload folder (with images, description.txt, audio.mp3)
+├── user_uploads/         # Contains user-submitted folders (images + text)
+│   └── <unique_folder_id>/
+│       ├── image1.jpg, image2.jpg, ...
+│       ├── description.txt
+│       └── audio.mp3
 │
 ├── static/
-│   ├── reels/              # Stores generated video reels (.mp4)
+│   ├── reels/            # Stores generated reels (.mp4)
 │   ├── css/
-│   │   ├── style.css       # Common styling
-│   │   ├── create.css      # Styling for create.html page
-│   │   └── gallery.css     # Styling for gallery.html page
-│   └── sample_images/      # (Optional) Store any static sample images if used
+│   │   ├── style.css     # Common styling
+│   │   ├── create.css    # Styling for create page
+│   │   └── gallery.css   # Styling for gallery page
+│   └── sample_images/    # Optional: sample assets
 │
 ├── templates/
-│   ├── base.html           # Base layout using Jinja2
-│   ├── index.html          # Homepage
-│   ├── create.html         # Form for uploading images and description
-│   └── gallery.html        # Displays all generated reels
+│   ├── base.html         # Base layout using Jinja2
+│   ├── index.html        # Homepage
+│   ├── create.html       # Form for uploading
+│   └── gallery.html      # Gallery to view generated reels
 │
-└── README.md               # Documentation file (you’re preparing this!)
+└── README.md             # This documentation
+```
 
 🧪 How It Works
-Run app.py to start the Flask web interface:
-python app.py
-2.Go to http://127.0.0.1:5000 to: Upload images + description See reels in the gallery
+1)Run the application:
+    python app.py
 
-🔧 To run the VidsnapAI project on your local system, make sure the following are installed:
-🐍 Python Version Python 3.7 or above
+2)Open your browser and go to:
+    http://127.0.0.1:5000
+    
+3)From the web interface, you can:
+    Upload images and a short description
+    View all generated video reels in the gallery
 
-📦 Python Libraries Install these using pip install: Flask – For running the web server gTTS – To convert text to speech Werkzeug – Comes with Flask, used internally uuid – For generating unique folder names (built-in module) os, time, shutil, subprocess – Built-in modules
-
-🎞️ External Tools ffmpeg – Required for combining images + audio into video Make sure ffmpeg is installed and accessible via command line Download ffmpeg
