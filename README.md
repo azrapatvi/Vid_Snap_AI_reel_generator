@@ -69,3 +69,21 @@ VidsnapAI is a simple and smart web application built using Python and Flask. It
     Upload images + description
     See reels in the gallery
 
+🔧To run the VidsnapAI project on your local system, make sure the following are installed:
+
+🐍 Python Version
+Python 3.7 or above
+
+📦 Python Libraries
+Install these using pip install:
+Flask – For running the web server
+gTTS – To convert text to speech
+Werkzeug – Comes with Flask, used internally
+uuid – For generating unique folder names (built-in module)
+os, time, shutil, subprocess – Built-in modules
+
+🎞️ External Tools
+ffmpeg – Required for combining images + audio into video
+Make sure ffmpeg is installed and accessible via command line
+Download ffmpeg
+
