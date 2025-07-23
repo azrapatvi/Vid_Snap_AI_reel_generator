@@ -69,7 +69,8 @@ VidsnapAI is a simple and smart web application built using Python and Flask. It
     Upload images + description
     See reels in the gallery
 
-🔧To run the VidsnapAI project on your local system, make sure the following are installed:
+
+## To run the VidsnapAI project on your local system, make sure the following are installed:
 
 🐍 Python Version
 Python 3.7 or above
